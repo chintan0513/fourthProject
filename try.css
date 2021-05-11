@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+:root {
+    --des-red: hsl(0, 36%, 70%);
+    --sft-red: hsl(0, 93%, 68%);
+    --drk-gry-red: hsl(0, 6%, 24%);
+}  
+body {
+    min-height: 100vh;
+    position: relative;
+}
+.content {
+    display: grid;
+    grid-template-columns: 1fr, 1fr, 1fr;
+    color: var(--des-red);
+    background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+}
+.logo{
+  margin: 0vh 10vw;
+}
+.logo img{
+    width: 30%;
+}
+.images{
+    width: 100%;
+}
+#mblpic{
+    width: 100%;
+    height: 100%;
+}
+#deskpic{
+    display: none;
+}
+.main{
+    margin: 10vh 10vw;
+    text-align: center;
+}
+.main h1{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+}
+.main h1 span{
+    color: var(--drk-gry-red);
+    font-weight: 400;
+}
+.main p{
+    font-size: 0.85rem;
+    line-height: 1.7;
+    margin: 1rem 0;
+}
+.input_cont {
+    display: flex;
+    position: relative;
+    border: 1px solid lightgray;
+    border-radius: 2em;
+    padding: 1rem 1.5rem;
+}
+.input_cont input {
+    border: none;
+    width: 40%;
+    background: transparent;
+}
+.input_cont input::placeholder {
+    color: var(--des-red);
+    opacity: 0.5;
+}
+#erroricon {
+    visibility: hidden;
+    margin: 0 auto;
+}
+.input_cont button {
+    position: absolute;
+    right: -1%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 3em;
+    padding: 1.2rem 2.2rem;
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    box-shadow: 0px 10px 10px 5px rgba(250, 0, 0, 0.2);
+    cursor: pointer;
+}
+#error-message {
+    position: absolute;
+    bottom: -50%;
+    color: var(--sft-red);
+}
+@media (min-width: 900px) {
+    body {
+      max-height: 100vh;
+    }
+    .content {
+      min-height: 100vh;
+      grid-template-columns: 55% 45%;
+      grid-template-rows: 10rem auto;
+      background-image: url('assets/bg-pattern-desktop.svg');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: bottom left;
+    }
+    .images {
+      grid-area: 1/2/3/3;
+      max-height: 100vh;
+    }
+    #mblpic {
+      display: none;
+    }
+    #deskpic {
+      display: unset;
+      width: 100%;
+      height: 100%;
+    }
+    .logo {
+      display: grid;
+      align-items: center;
+      margin: 0vh 10vw;
+    }
+    .logo img {
+      width: 8rem;
+    }
+    .main {
+      margin: 10vh 15vw 10vh 10vw;
+      text-align: left;
+    }
+    .main h1 {
+      font-size: 2.5rem;
+      letter-spacing: 0.3em;
+      line-height: 1.2;
+    }
+    .main h1 span {
+      font-weight: 700;
+    }
+    .main p {
+      font-size: 0.7rem;
+      margin: 1rem 0 2rem;
+      line-height: 2;
+    }
+    .input_cont input {
+      width: 60%;
+    }
+}
